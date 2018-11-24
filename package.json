@@ -1,0 +1,50 @@
+{
+	"name": "resume-select-ui",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"name": "Thorsten Roggendorf",
+		"email": "junk@schrotie.de",
+		"url": "https://roggendorf.pro"
+	},
+	"description": "Select parts of your full jsonresume for a particular job",
+	"homepage": "https://github.com/schrotie/resume-select-ui#readme",
+	"bugs": {
+		"url": "https://github.com/shrotie/sresume-select-ui/issues",
+		"email": "junk@shrotie.de"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/schrotie/resume-select-ui"
+	},
+	"files": [
+		"app.mjs",
+		"index.html",
+		"server.js"
+	],
+	"keywords": [
+		"browser",
+		"resume"
+	],
+	"main": "index.html",
+	"browser": "index.html",
+	"dependencies": {
+		"body-parser": "latest",
+		"connect": "latest",
+		"jsonresume-theme-short": "git+https://github.com/schrotie/jsonresume-theme-short.git",
+		"resume-cli": "latest",
+		"serve-static": "latest",
+		"shadow-query": "latest",
+		"ws": "latest"
+	},
+	"devDependencies": {
+		"eslint": "^3.12.0",
+		"eslint-config-google": "^0.7.1",
+		"eslint-plugin-html": "^1.7.0"
+	},
+	"scripts": {
+		"lint": "eslint . --ext mjs,js,html --ignore-path .gitignore",
+		"start": "node ${PWD}/server.js &",
+		"stop": "ps aux | grep 'cv-creator/server.js' | grep -v grep | awk '{print $2}' | xargs kill"
+	}
+}
